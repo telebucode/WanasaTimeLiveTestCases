@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="42129" started-at="2019-11-08T11:00:07Z" finished-at="2019-11-08T11:00:49Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="42129" started-at="2019-11-08T11:00:07Z" finished-at="2019-11-08T11:00:49Z">
+      <class name="wanasaTest.HomePageTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:wanasaTest.HomePageTest@64616ca2]" name="setup" is-config="true" duration-ms="17116" started-at="2019-11-08T16:30:07Z" finished-at="2019-11-08T16:30:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IamOptional]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyfooterlinks()[pri:7, instance:wanasaTest.HomePageTest@64616ca2]" name="verifyfooterlinks" duration-ms="24127" started-at="2019-11-08T16:30:24Z" finished-at="2019-11-08T16:30:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyfooterlinks -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:wanasaTest.HomePageTest@64616ca2]" name="tearDown" is-config="true" duration-ms="196" started-at="2019-11-08T16:30:48Z" finished-at="2019-11-08T16:30:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyfooterlinks status=SUCCESS method=HomePageTest.verifyfooterlinks()[pri:7, instance:wanasaTest.HomePageTest@64616ca2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="closeBrowser1(java.lang.String)[pri:0, instance:wanasaTest.HomePageTest@64616ca2]" name="closeBrowser1" is-config="true" duration-ms="669" started-at="2019-11-08T16:30:48Z" finished-at="2019-11-08T16:30:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IamOptional]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser1 -->
+      </class> <!-- wanasaTest.HomePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

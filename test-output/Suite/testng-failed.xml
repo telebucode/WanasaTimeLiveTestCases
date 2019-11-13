@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test">
+    <classes>
+      <class name="wanasaTest.HomePageTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="wanasaTest.HomePageTest">
+        <methods>
+          <include name="verifypwdcahngeclose"/>
+          <include name="setup"/>
+          <include name="verifygoogLogin"/>
+          <include name="verifyeventbookfree"/>
+          <include name="verifypartialbookticketsevent"/>
+          <include name="cancelBtnCreditCard"/>
+          <include name="evouchersFileter"/>
+          <include name="plansandpricingAnyQuery"/>
+          <include name="verifycontactus"/>
+          <include name="verifydownloadticket"/>
+          <include name="verifymoviebookingwithvoucher"/>
+          <include name="tearDown"/>
+          <include name="backBtnSingleDayEvent"/>
+          <include name="verifyeventbookcbqpay"/>
+          <include name="verifysearchbookingistory"/>
+          <include name="verifypasswordchange"/>
+          <include name="verifyuseroperations"/>
+          <include name="closeBrowser1"/>
+          <include name="cancelBtnInCBQPayment"/>
+          <include name="verifyeventbookdebitpay"/>
+        </methods>
+      </class> <!-- wanasaTest.HomePageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

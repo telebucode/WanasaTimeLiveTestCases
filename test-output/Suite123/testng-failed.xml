@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite123]">
+  <parameter name="Eventdate" value="27"/>
+  <parameter name="Category" value="FREE"/>
+  <parameter name="EventTime" value="8:30PM"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="seatsection" value="Gold"/>
+  <parameter name="eventname" value="Bahrain music band"/>
+  <parameter name="Ticketcount" value="2"/>
+  <parameter name="subcategoryselection" value="FREE"/>
+  <test name="test">
+    <parameter name="Eventdate" value="30"/>
+    <parameter name="Category" value="Free"/>
+    <parameter name="EventTime" value="6:00PM"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="seatsection" value="null"/>
+    <parameter name="eventname" value="FASHION WEEK"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="Free"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="verifyeventbookdebitpay"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- test -->
+  <test name="Testing Parameterization">
+    <parameter name="Eventdate" value="null"/>
+    <parameter name="Category" value="silver"/>
+    <parameter name="EventTime" value="null"/>
+    <parameter name="seatsection" value="null"/>
+    <parameter name="eventname" value="food festival"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="phc"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="verifyeventbookcbqpay"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- Testing Parameterization -->
+  <test name="abcd">
+    <parameter name="Eventdate" value="30"/>
+    <parameter name="Category" value="Free"/>
+    <parameter name="EventTime" value="4:00PM"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="seatsection" value="null"/>
+    <parameter name="eventname" value="Kite"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="Free"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="verifyeventbookfree"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- abcd -->
+  <test name="qa">
+    <parameter name="Eventdate" value="27"/>
+    <parameter name="Category" value="FREE"/>
+    <parameter name="EventTime" value="8:30PM"/>
+    <parameter name="seatsection" value="Gold"/>
+    <parameter name="eventname" value="Bahrain music band"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="FREE"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="verifydownloadticket"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- qa -->
+  <test name="test(failed)">
+    <parameter name="Eventdate" value="30"/>
+    <parameter name="Category" value="Free"/>
+    <parameter name="EventTime" value="6:00PM"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="seatsection" value="null"/>
+    <parameter name="eventname" value="FASHION WEEK"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="Free"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="verifyeventbookdebitpay" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- test(failed) -->
+  <test name="abcd(failed)">
+    <parameter name="Eventdate" value="30"/>
+    <parameter name="Category" value="Free"/>
+    <parameter name="EventTime" value="4:00PM"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="seatsection" value="null"/>
+    <parameter name="eventname" value="Kite"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="Free"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="verifyeventbookfree" invocation-numbers="0"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- abcd(failed) -->
+  <test name="qa(failed)">
+    <parameter name="Eventdate" value="27"/>
+    <parameter name="Category" value="FREE"/>
+    <parameter name="EventTime" value="8:30PM"/>
+    <parameter name="seatsection" value="Gold"/>
+    <parameter name="eventname" value="Bahrain music band"/>
+    <parameter name="Ticketcount" value="2"/>
+    <parameter name="subcategoryselection" value="FREE"/>
+    <classes>
+      <class name="wanasa.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="verifydownloadticket" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+          <include name="closeBrowser1"/>
+        </methods>
+      </class> <!-- wanasa.HomePageTest -->
+    </classes>
+  </test> <!-- qa(failed) -->
+</suite> <!-- Failed suite [Suite123] -->
