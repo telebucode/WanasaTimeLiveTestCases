@@ -37,7 +37,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 
 	}
 
-	//@Test(priority = 2)
+	@Test(priority = 2)
 
 	public void verifylogin() throws InterruptedException {
 		logger_ss = extent.createTest("verifylogin");
