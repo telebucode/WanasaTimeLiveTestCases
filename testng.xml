@@ -2,78 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite1234" >
  
-	
-	<test name="test1">
-		<parameter name="browser" value="chrome" />
-		<parameter name="eventname" value="FASHION WEEK" />
-		<parameter name="Eventdate" value="30" />
-		<parameter name="EventTime" value="6:00PM" />
-		<parameter name="Category" value="Free" />
-		<parameter name="subcategoryselection" value="Free" />
-		<parameter name="Ticketcount" value="2" />
-		<parameter name="seatsection" value="null" />
-		<classes>
-			<class name="wanasaTest.HomePageTest" >
-			   <methods>
-                    <include name="verifyeventbookdebitpay" />
-                </methods>
-            </class>
-		</classes>
-	</test> 
-			
-	 <test name="Testing Parameterization1">
-		<parameter name="eventname" value="food festival"/>
-		<parameter name="Eventdate" value="null" />
-		<parameter name="EventTime" value="null" />
-		<parameter name="Category" value="silver" />
-		<parameter name="subcategoryselection" value="audlt" />	
-		<parameter name="Ticketcount" value="2" />
-		<parameter name="seatsection" value="null" />
-		<classes>
-			<class name="wanasaTest.HomePageTest" >
-			   <methods>
-                    <include name="verifyeventbookcbqpay" />
-                </methods>
-            </class>
-		</classes>
-	</test> 
-	
  
-  
-	<test name = "abcd1">
-		<parameter name="browser" value="chrome" />
-		<parameter name="eventname" value="Kite" />
-		<parameter name="Eventdate" value="30" />
-		<parameter name="EventTime" value="4:00PM" />
-		<parameter name="Category" value="Free" />
-		<parameter name="subcategoryselection" value="Free" />
-		<parameter name="Ticketcount" value="2" />
-		<parameter name="seatsection" value="null" />
+	<test name="CreateAndCallGroupTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="url" value="stagingUrl" />
 		<classes>
-			<class name="wanasaTest.HomePageTest" >
-			   <methods>
-                    <include name="verifyeventbookfree" />
-                </methods>
-            </class>
+			<class name="GT.GT.CreateAndCallGroupTest" />
 		</classes>
-	</test> 
+	</test>
 
-		<test name="qa1">		
-		<parameter name="eventname" value="Bahrain music band" />
-		<parameter name="Eventdate" value="27" />
-		<parameter name="EventTime" value="8:30PM" />
-		<parameter name="Category" value="FREE" />
-		<parameter name="subcategoryselection" value="FREE" />
-		<parameter name="Ticketcount" value="2" />
-		<parameter name="seatsection" value="Gold" />
-		<classes>
-			<class name="wanasaTest.HomePageTest" >
-			   <methods>
-                    <include name="verifydownloadticket" />
-                </methods>
-            </class>
-		</classes>
-	</test>	  
-			
 
 </suite> <!-- Suite -->
