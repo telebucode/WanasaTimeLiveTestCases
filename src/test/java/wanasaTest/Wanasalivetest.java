@@ -20,11 +20,11 @@ public class Wanasalivetest extends  BrowserFunctions {
 	@Test(priority = 0)
 	public void verifysignup() throws InterruptedException {
 		// ss.alertadvt();
-		logger_ss = extent.createTest("verifysignup");
+		logger_ss = extent.createTest("verifysignup");		
 		String sucessmsg = ss.signup();
+		logger_ss.log(Status.INFO, "signup done as a new user.");
 		Assert.assertEquals(sucessmsg, "You have successfully registered. We have sent a verification email to you.");
 		driver.navigate().to(CommonMethods.passingData("url"));
-		// ss.alertadvt();
 		logger_ss.log(Status.INFO, "signup done successfully.");
 	}
 
@@ -38,22 +38,24 @@ public class Wanasalivetest extends  BrowserFunctions {
 	}
 
 	@Test(priority = 2)
-
 	public void verifylogin() throws InterruptedException {
 		logger_ss = extent.createTest("verifylogin");
 		driver.navigate().to(CommonMethods.passingData("url"));
 		//// ss.alertadvt();
 		ss.clickSignInButton();
+		logger_ss.log(Status.INFO, "Login with valid credentials.");
 		String afterlogin = ss.signinWanasaTimeCredentials();
+		logger_ss.log(Status.INFO, "Login success with valid credentials.");
 		Assert.assertEquals(afterlogin, CommonMethods.passingData("url"));
 		ss.logout();
+		logger_ss.log(Status.INFO, "Logout done.");
 		logger_ss.log(Status.INFO, "Successfully verified login functionality.");
 
 	}
 
 	@Test(priority = 3)
 	public void verifygoogLogin() throws InterruptedException {
-		logger_ss = extent.createTest("googLogin");
+		logger_ss = extent.createTest("googLogin testing stared.");
 		// ss.logout();
 		driver.navigate().to(CommonMethods.passingData("url"));
 		ss.clickSignInButton();
@@ -61,37 +63,45 @@ public class Wanasalivetest extends  BrowserFunctions {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String afterlogin = ss.googleLogin();
 		Assert.assertEquals(afterlogin, "https://www.wanasatime.com/EventsHome.aspx#");
+		logger_ss.log(Status.INFO,"googLogin done Successfully.");
 		Thread.sleep(3000);
 		CommonMethods.explicitWaitForElementVisibility(ss.menu);
 		ss.logout();
+		logger_ss.log(Status.INFO, "Logout done.");
 		Thread.sleep(2000);
 		logger_ss.log(Status.INFO, "Successfully verified googLogin.");
 	}
 
 	@Test(priority = 4)
 	public void verifyfooterlinks() throws InterruptedException {
-		logger_ss = extent.createTest("verifyfooterlinks");
+		logger_ss = extent.createTest("verify all footerlinks");
 		ss.footerlinksaboutus();
 		String URL = driver.getCurrentUrl();
 		Assert.assertEquals(URL,"https://www.wanasatime.com/AboutUs.aspx");
+		logger_ss.log(Status.INFO,"verified Aboutus link Successfully");
 		/*ss.footerlinksAdvertiseWithUs();   
 		String Advt = driver.getCurrentUrl();
 		Assert.assertEquals(Advt, CommonMethods.passingData("url"));*/
 		ss.footerlinksfaq(); 
 		String FAQ = driver.getCurrentUrl();
 		Assert.assertEquals(FAQ,"https://www.wanasatime.com/FAQs.aspx");
+		logger_ss.log(Status.INFO,"verified FAQ link Successfully.");
 		ss.footerlinkstc();
 		String TC = driver.getCurrentUrl();
 		Assert.assertEquals(TC,"https://www.wanasatime.com/Terms.aspx");
+		logger_ss.log(Status.INFO,"verified T&C link Successfully.");
 		ss.footerlinkprivacy();
-		String privacy = driver.getCurrentUrl();
+		String privacy = driver.getCurrentUrl();		
 		Assert.assertEquals(privacy,"https://www.wanasatime.com/Privacy.aspx");
+		logger_ss.log(Status.INFO,"verified Privacy Policy link Successfully.");
 		ss.footerlinkcontactus();
 		String contactus = driver.getCurrentUrl();
 		Assert.assertEquals(contactus, "https://www.wanasatime.com/ContactUs.aspx");
+		logger_ss.log(Status.INFO,"verified ContactUs link Successfully.");
 		ss.footerlinkplanspricing();
 		String pricing = driver.getCurrentUrl();
 		Assert.assertEquals(pricing,"https://www.wanasatime.com/PlansPricing.aspx");
+		logger_ss.log(Status.INFO,"verified PlansPricing link Successfully.");
 		logger_ss.log(Status.INFO, "Successfully verified footerlinks.");
 	}
 	
@@ -99,17 +109,18 @@ public class Wanasalivetest extends  BrowserFunctions {
 	public void verifypricemovie() throws InterruptedException
 	{
 		logger_ss = extent.createTest("verifypricemovie");
-		ss.countrySelection();		
+		ss.countrySelection();	
+		logger_ss.log(Status.INFO,"Country selection done.");
 		boolean r = ss.pricecompareMoviebooking();
 		Assert.assertEquals(r, true);
-		//Assert.assertEquals(r, true);
-		logger_ss.log(Status.INFO, "Successfully verified verifypricemovie");
+		logger_ss.log(Status.INFO, "Successfully verified verifypricemovie.");
 	}
 	//@Test(priority = 6)
 	public void verifypriceevent() throws InterruptedException
 	{
 		logger_ss = extent.createTest("verifypriceevent");
 		ss.countrySelection();
+		logger_ss.log(Status.INFO,"Country selection done.");
 		boolean r = ss.pricecompare();
 		Assert.assertEquals(r, true);
 		logger_ss.log(Status.INFO, "Successfully verified verifypriceevent");
@@ -121,7 +132,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		logger_ss = extent.createTest("verifycontactus");
 		driver.navigate().to(CommonMethods.passingData("url"));
 		ss.countrySelection();
-		// ss.alertadvt();
+		logger_ss.log(Status.INFO,"Country selection done.");
 		String msg = ss.contactus();
 		Assert.assertEquals(msg, "Thanks for providing your information we will get back to you soon");
 		logger_ss.log(Status.INFO, "Successfully verified contactus.");
@@ -141,7 +152,6 @@ public class Wanasalivetest extends  BrowserFunctions {
 	public void verifyplaystoreclick() throws InterruptedException {
 		logger_ss = extent.createTest("verifyplaystoreclick");
 		driver.navigate().to(CommonMethods.passingData("url"));
-		// ss.alertadvt();
 		String s = ss.playstoreclick();
 		Assert.assertEquals(s, "https://play.google.com/store/apps/details?id=com.mobile.android.wanasatime&hl=en_US");
 		logger_ss.log(Status.INFO, "Successfully verified playstoreclick");
@@ -152,7 +162,6 @@ public class Wanasalivetest extends  BrowserFunctions {
 	public void verifyappstoreclick() throws InterruptedException {
 		logger_ss = extent.createTest("verifyappstoreclick");
 		driver.navigate().to(CommonMethods.passingData("url"));
-		// ss.alertadvt();
 		String s = ss.appstoreclick();
 		Assert.assertEquals(s, "https://apps.apple.com/us/app/wanasatime/id1187788688");
 		logger_ss.log(Status.INFO, "Successfully verified appstoreclick");
@@ -169,6 +178,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		logger_ss = extent.createTest("verifyuseroperations");
 		driver.navigate().to(CommonMethods.passingData("url"));
 		ss.login();
+		logger_ss.log(Status.INFO, "Login success with valid credentials.");
 		ss.edituser();
 		logger_ss.log(Status.INFO, "Successfully verified verifyuseroperations");
 	}
@@ -176,8 +186,6 @@ public class Wanasalivetest extends  BrowserFunctions {
 	@Test(priority = 20)
 	public void verifysearchbookingistory() throws InterruptedException {
 		logger_ss = extent.createTest("searchbookingistory");
-	
-		//driver.navigate().to(CommonMethods.passingData("url"));
 		ss.searchbookingistory();
 		logger_ss.log(Status.INFO, "Successfully verified searchbookingistory");
 	
@@ -190,6 +198,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		Assert.assertEquals(bol, true);
 		logger_ss.log(Status.INFO, "Filter Applied Successfully Based on Evouchers");
 		ss.logout();
+		logger_ss.log(Status.INFO, "logout done Successfully.");
 	}
 
 
@@ -198,7 +207,6 @@ public class Wanasalivetest extends  BrowserFunctions {
 	public void verifysocialmediaiconclick() throws InterruptedException {
 		logger_ss = extent.createTest("verifysocialmediaiconclick");
 		ss.socialmediaiconclick();
-		// Assert.assertEquals(s1, true);
 		logger_ss.log(Status.INFO, "Successfully verifysocialmediaiconclick.");
 	}
 	
@@ -208,6 +216,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 			 driver.navigate().to(CommonMethods.passingData("url"));
 			logger_ss = extent.createTest("verifyMovieLoactons");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			boolean bool = ss.moviesFilter();
 			Assert.assertEquals(bool, true);
 			logger_ss.log(Status.INFO, "Filter Applied Successfully Based on Mall");
@@ -219,6 +228,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		public void filterMoviesGenre() throws InterruptedException {
 			logger_ss = extent.createTest("verifyMovieLoactons");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			boolean bool = ss.moviesGenre();
 			Assert.assertEquals(bool, true);
 			logger_ss.log(Status.INFO, "Filter Applied Successfully Based on Genre");
@@ -231,6 +241,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		public void filterMoviesLang() throws InterruptedException {
 			logger_ss = extent.createTest("verifyMovieLanguage");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			boolean bool = ss.moviesLanguage();
 			Assert.assertEquals(bool, true);
 			logger_ss.log(Status.INFO, "Filter Applied Successfully Based on Language");
@@ -242,6 +253,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		public void moviesAllFilters() throws InterruptedException {
 			logger_ss = extent.createTest("verifyMovieLanguage");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			// ss.moviesFilter();
 			// ss.moviesGenre();
 			boolean bool = ss.movieAllFilters();
@@ -255,6 +267,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		public void movieTimeingsFilter() throws InterruptedException {
 			logger_ss = extent.createTest("verifyMovieTime");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			// ss.moviesFilter();
 			// ss.moviesGenre();
 			boolean bool = ss.movieFilterTime();
@@ -269,6 +282,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		{
 		logger_ss = extent.createTest("verifyMovieTheater");
 		        ss.countrySelection();
+		        logger_ss.log(Status.INFO,"Country selection done.");
 		        //ss.moviesFilter();
 		       // ss.moviesGenre();
 		        ss.thearterFilter();
@@ -282,9 +296,9 @@ public class Wanasalivetest extends  BrowserFunctions {
 		public void verifyeventTypeFilter() throws InterruptedException {
 			logger_ss = extent.createTest("verifyEventType");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			boolean bol = ss.eventFilterType();
 			Assert.assertEquals(bol, true);
-
 			logger_ss.log(Status.INFO, "Filter Applied Successfully Based on Event Type");
 
 		}
@@ -294,6 +308,7 @@ public class Wanasalivetest extends  BrowserFunctions {
 		public void verifyeventCatFilter() throws InterruptedException {
 			logger_ss = extent.createTest("verifyEventCategory");
 			ss.countrySelection();
+			logger_ss.log(Status.INFO,"Country selection done.");
 			boolean bol = ss.eventFilterCategory();
 			Assert.assertEquals(bol, true);
 			logger_ss.log(Status.INFO, "Filter Applied Successfully Based on Event Category");
